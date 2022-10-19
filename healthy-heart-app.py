@@ -5,10 +5,11 @@ import numpy as np
 import pickle as pkl
 from sklearn.preprocessing import MinMaxScaler
 scal=MinMaxScaler()
+
+from PIL import Image
+image=Image.open("heart.png")
 #Load the saved model
 model=pkl.load(open("final_model.p","rb"))
-
-
 
 
 
@@ -86,7 +87,7 @@ html_temp = """
       
 # display the front end aspect
 st.markdown(html_temp, unsafe_allow_html = True) 
-st.subheader('by Amlan Mohanty ')
+st.subheader('by Shubham Upadhyay ')
       
 # following lines create boxes in which user can enter data required to make prediction
 age=st.selectbox ("Age",range(1,121,1))
